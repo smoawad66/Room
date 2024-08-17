@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/colorsFragment">
+    <fragment
+        android:id="@+id/colorsFragment"
+        android:name="com.example.room.ui.ColorsFragment"
+        android:label="fragment_colors"
+        tools:layout="@layout/fragment_colors" >
+        <action
+            android:id="@+id/action_colorsFragment_to_colorFragment"
+            app:destination="@id/colorFragment" />
+        <action
+            android:id="@+id/action_colorsFragment_to_addColorFragment"
+            app:destination="@id/addColorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/colorFragment"
+        android:name="com.example.room.ui.ColorFragment"
+        android:label="fragment_color"
+        tools:layout="@layout/fragment_color" >
+        <argument
+            android:name="color"
+            app:argType="com.example.room.models.Color" />
+    </fragment>
+    <fragment
+        android:id="@+id/addColorFragment"
+        android:name="com.example.room.ui.AddColorFragment"
+        android:label="fragment_add_color"
+        tools:layout="@layout/fragment_add_color" />
+</navigation>
